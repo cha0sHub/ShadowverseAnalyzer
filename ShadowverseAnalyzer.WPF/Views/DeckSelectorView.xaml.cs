@@ -5,14 +5,14 @@ using System.Windows.Controls;
 namespace ShadowverseAnalyzer.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for PackSimulatorVIew.xaml
+    /// Interaction logic for DeckSelectorView.xaml
     /// </summary>
-    public partial class PackSimulatorView : Grid, IPackSimulatorView
+    public partial class DeckSelectorView : Grid, IDeckSelectorView
     {
 
-        private IPackSimulatorController Controller { get; }
+        private IDeckSelectorController Controller { get; }
 
-        public PackSimulatorView(IPackSimulatorController controller)
+        public DeckSelectorView(IDeckSelectorController controller)
         {
             Controller = controller;
             DataContext = controller;

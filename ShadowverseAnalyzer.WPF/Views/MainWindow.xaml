@@ -1,0 +1,40 @@
+﻿<Window x:Class="ShadowverseAnalyzer.WPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShadowverseAnalyzer.WPF"
+        mc:Ignorable="d" 
+        Title="Shadowverse Analyzer" Height="650" Width="900" Background="Black" >
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="MinHeight" Value="25" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                    <Setter Property="Background" Value="WhiteSmoke" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Height="50" Background="DarkGray" BorderBrush="Black" BorderThickness="0,0,0,1" >
+            <Grid x:Name="ViewSelectionGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="DeckSelectionButton" Content="Deck Selection" Grid.Column="0" Click="DeckSelectionButton_Click" />
+                <Button x:Name="DeckBuilderButton" Content="Deck Builder" Grid.Column="1" Click="DeckBuilderButton_Click" />
+                <Button x:Name="DeckAnalysisButton" Content="Deck Analysis" Grid.Column="2" Click="DeckAnalysisButton_Click" />
+                <Button x:Name="PackSimulatorButton" Content="Pack Simulator" Grid.Column="3" Click="PackSimulatorButton_Click" />
+            </Grid>
+        </Border>
+        <ContentControl Grid.Row="1" x:Name="ViewPlaceholder" />
+    </Grid>
+</Window>
